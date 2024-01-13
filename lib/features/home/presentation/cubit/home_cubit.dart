@@ -1,12 +1,12 @@
-import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_generate/core/usecases/no_params.dart';
 import 'package:flutter_generate/core/constants/constant.dart';
-import 'package:flutter_generate/features/home/domain/entity/todo.dart';
+import 'package:flutter_generate/core/models/todo.dart';
+import 'package:flutter_generate/core/usecases/no_params.dart';
 import 'package:flutter_generate/features/home/domain/usecases/get_todos_usecase.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-
 part 'home_state.dart';
+part 'home_cubit.freezed.dart';
 
 @injectable
 class HomeCubit extends Cubit<HomeState> {

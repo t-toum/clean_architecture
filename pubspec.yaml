@@ -61,6 +61,8 @@ dependencies:
   #localstorage
   shared_preferences: ^2.0.11
   auto_route: ^7.8.4
+  freezed: ^2.4.6
+  freezed_annotation: ^2.4.1
   
 dev_dependencies:
   retrofit_generator: ^8.0.6 

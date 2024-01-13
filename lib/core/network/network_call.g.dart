@@ -21,13 +21,13 @@ class _RestClient implements RestClient {
   String? baseUrl;
 
   @override
-  Future<List<TodoModel>> getTodos() async {
+  Future<List<Todo>> getTodos() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<TodoModel>>(Options(
+        await _dio.fetch<List<dynamic>>(_setStreamType<List<Todo>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -44,7 +44,7 @@ class _RestClient implements RestClient {
               baseUrl,
             ))));
     var value = _result.data!
-        .map((dynamic i) => TodoModel.fromJson(i as Map<String, dynamic>))
+        .map((dynamic i) => Todo.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }

@@ -1,5 +1,5 @@
 import 'package:flutter_generate/core/constants/constant.dart';
-import 'package:flutter_generate/features/home/data/model/todo_model.dart';
+import 'package:flutter_generate/core/models/todo.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
@@ -13,5 +13,5 @@ abstract class RestClient {
   factory RestClient(Dio dio) = _RestClient;
 
   @GET("/todos")
-  Future<List<TodoModel>> getTodos();
+  Future<List<Todo>> getTodos();
 }

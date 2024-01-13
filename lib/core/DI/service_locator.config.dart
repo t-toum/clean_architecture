@@ -21,7 +21,7 @@ import 'package:flutter_generate/features/home/domain/repositories/home_reposito
     as _i11;
 import 'package:flutter_generate/features/home/domain/usecases/get_todos_usecase.dart'
     as _i13;
-import 'package:flutter_generate/features/home/presentation/cubit/home/home_cubit.dart'
+import 'package:flutter_generate/features/home/presentation/cubit/home_cubit.dart'
     as _i14;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;

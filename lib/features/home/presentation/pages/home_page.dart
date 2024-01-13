@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_generate/core/DI/service_locator.dart';
 import 'package:flutter_generate/core/constants/constant.dart';
+import 'package:flutter_generate/core/models/todo.dart';
 import 'package:flutter_generate/core/routers/app_router.dart';
-import 'package:flutter_generate/features/home/domain/entity/todo.dart';
-import 'package:flutter_generate/features/home/presentation/cubit/home/home_cubit.dart';
+import 'package:flutter_generate/features/home/presentation/cubit/home_cubit.dart';
 
 @RoutePage()
 class MyHomePage extends StatelessWidget implements AutoRouteWrapper {
@@ -54,7 +54,7 @@ class MyHomePage extends StatelessWidget implements AutoRouteWrapper {
               itemBuilder: (context, index) {
                 Todo todo = state.todoList[index];
                 return ListTile(
-                  title: Text(todo.title ?? ""),
+                  title: Text(todo.title),
                   subtitle: Text(todo.userId.toString()),
                   trailing: Container(
                     width: 20.0,
