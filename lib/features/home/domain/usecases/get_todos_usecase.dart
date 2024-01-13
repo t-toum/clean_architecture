@@ -7,10 +7,10 @@ import 'package:flutter_generate/features/home/domain/repositories/home_reposito
 import 'package:injectable/injectable.dart';
 
 @lazySingleton
-class GetTodo implements UseCase<List<Todo>, NoParams> {
+class GetTodoUsecase implements UseCase<List<Todo>, NoParams> {
   final HomeRepository homeRepository;
 
-  GetTodo(this.homeRepository);
+  GetTodoUsecase(this.homeRepository);
 
   @override
   Future<Either<Failure, List<Todo>>> call(NoParams noParams) async {

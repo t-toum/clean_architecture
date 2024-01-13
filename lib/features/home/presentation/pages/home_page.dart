@@ -1,14 +1,22 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_generate/core/util/app_navigator.dart';
-import 'package:flutter_generate/core/util/constant.dart';
-import 'package:flutter_generate/core/util/router.dart';
+import 'package:flutter_generate/core/DI/service_locator.dart';
+import 'package:flutter_generate/core/constants/constant.dart';
+import 'package:flutter_generate/core/routers/app_router.dart';
 import 'package:flutter_generate/features/home/domain/entity/todo.dart';
 import 'package:flutter_generate/features/home/presentation/cubit/home/home_cubit.dart';
 
-class MyHomePage extends StatelessWidget {
+@RoutePage()
+class MyHomePage extends StatelessWidget implements AutoRouteWrapper {
   const MyHomePage({super.key});
-
+  @override
+  Widget wrappedRoute(BuildContext context) {
+    return BlocProvider(
+      create: (context) => getIt<HomeCubit>()..fetchTodoList(),
+      child: this,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +65,7 @@ class MyHomePage extends StatelessWidget {
                     ),
                   ),
                   onTap: () {
-                    AppNavigator.navigateTo(AppRoute.detailRoute);
+                    context.pushRoute(const DetailRoute());
                   },
                 );
               },

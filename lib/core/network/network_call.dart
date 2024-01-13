@@ -1,4 +1,4 @@
-import 'package:flutter_generate/core/util/constant.dart';
+import 'package:flutter_generate/core/constants/constant.dart';
 import 'package:flutter_generate/features/home/data/model/todo_model.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
