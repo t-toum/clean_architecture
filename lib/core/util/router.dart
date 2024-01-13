@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_generate/core/util/service_locator.dart';
+import 'package:flutter_generate/core/DI/service_locator.dart';
 import 'package:flutter_generate/core/widgets/not_found.dart';
 import 'package:flutter_generate/features/home/presentation/cubit/home/home_cubit.dart';
 import 'package:flutter_generate/features/home/presentation/pages/detail_page.dart';
@@ -14,7 +14,7 @@ class AppRoute {
     switch (settings.name) {
       case homeRoute:
         return _materialRoute(
-          const MyHomePage(title: 'Flutter Demo Home Page'),
+          const MyHomePage(),
           providers: [
             BlocProvider<HomeCubit>(
               create: (context) => getIt<HomeCubit>()..fetchTodoList(),

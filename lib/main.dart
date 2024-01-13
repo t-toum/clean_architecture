@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_generate/core/util/app_navigator.dart';
 import 'package:flutter_generate/core/util/router.dart';
-import 'package:flutter_generate/core/util/service_locator.dart';
+import 'package:flutter_generate/core/DI/service_locator.dart';
 
 Future<void> main() async {
   await configureDependencies();
@@ -9,7 +9,7 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

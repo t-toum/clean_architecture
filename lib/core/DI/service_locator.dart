@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_generate/core/DI/service_locator.config.dart';
 import 'package:flutter_generate/core/util/app_navigator.dart';
-import 'package:flutter_generate/core/util/service_locator.config.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
@@ -12,5 +12,5 @@ Future<void> configureDependencies() async {
   //initialize navigator
   AppNavigator();
   //initialize dependencies
-  await $initGetIt(getIt);
+  await getIt.init();
 }

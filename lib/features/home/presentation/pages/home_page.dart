@@ -7,9 +7,8 @@ import 'package:flutter_generate/features/home/domain/entity/todo.dart';
 import 'package:flutter_generate/features/home/presentation/cubit/home/home_cubit.dart';
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key});
 
-  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,7 @@ class MyHomePage extends StatelessWidget {
             const SizedBox(
               width: 8,
             ),
-            Text(title),
+            const Text('Todo list'),
           ],
         ),
       ),
